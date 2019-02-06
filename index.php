@@ -1,5 +1,6 @@
 <?php
 include 'data.php';
+include 'functions.php';
 $is_auth = (bool) rand(0, 1);
 
 $user_name = 'Brad';
@@ -86,7 +87,7 @@ $user_avatar = 'img/user.jpg';
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount">Стартовая цена</span>
-                            <span class="lot__cost"><?=$lot['price']?><b class="rub">р</b></span>
+                            <span class="lot__cost"><?=formatPrice($lot['price'])?></span>
                         </div>
                         <div class="lot__timer timer">
 
