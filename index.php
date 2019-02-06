@@ -1,4 +1,5 @@
 <?php
+include 'data.php';
 $is_auth = (bool) rand(0, 1);
 
 $user_name = 'Brad';
@@ -27,15 +28,14 @@ $user_avatar = 'img/user.jpg';
         <a class="main-header__add-lot button" href="add-lot.html">Добавить лот</a>
 
         <nav class="user-menu">
-            <!-- здесь должен быть PHP код для показа аватара пользователя -->
-            <?php if ($is_auth == 1) : ?>
+            <?php if ($is_auth == 1): ?>
             <div class="user-menu__image">
                 <img src="<?=$user_avatar?>" width="40" height="40" alt="Utilisateur">
             </div>
             <div class="user-menu__logged">
                 <p><?=$user_name?></p>
             </div>
-            <?php else : ?>
+            <?php else: ?>
             <ul class="user-menu__list">
                 <li class="user-menu__item"><a href="http://">S'inscrire</a></li>
                 <li class="user-menu__item"><a href="http://">Se connecter</a></li>
@@ -75,17 +75,18 @@ $user_avatar = 'img/user.jpg';
             <h2>Открытые лоты</h2>
         </div>
         <ul class="lots__list">
+        <?php foreach ($lots as $lot): ?>
             <li class="lots__item lot">
                 <div class="lot__image">
-                    <img src="img/lot-1.jpg" width="350" height="260" alt="Сноуборд">
+                    <img src="<?=$lot['url']?>" width="350" height="260" alt="<?=$lot['title']?>">
                 </div>
                 <div class="lot__info">
-                    <span class="lot__category">Доски и лыжи</span>
-                    <h3 class="lot__title"><a class="text-link" href="lot.html">2014 Rossignol District Snowboard</a></h3>
+                    <span class="lot__category"><?=$lot['category']?></span>
+                    <h3 class="lot__title"><a class="text-link" href="lot.html"><?=$lot['title']?></a></h3>
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount">Стартовая цена</span>
-                            <span class="lot__cost">10 999<b class="rub">р</b></span>
+                            <span class="lot__cost"><?=$lot['price']?><b class="rub">р</b></span>
                         </div>
                         <div class="lot__timer timer">
 
@@ -93,31 +94,24 @@ $user_avatar = 'img/user.jpg';
                     </div>
                 </div>
             </li>
+        <?php endforeach;?>
         </ul>
     </section>
 </main>
 
 <footer class="main-footer">
     <nav class="nav">
+        <?php 
+        $count_items = count($categories)-1;
+        $cur_item = 1;
+        ?>
         <ul class="nav__list container">
+        <?php while ($count_items >= $cur_item): ?>
             <li class="nav__item">
-                <a href="all-lots.html">Доски и лыжи</a>
+                <a href="all-lots.html"><?=$categories[$cur_item]?></a>
             </li>
-            <li class="nav__item">
-                <a href="all-lots.html">Крепления</a>
-            </li>
-            <li class="nav__item">
-                <a href="all-lots.html">Ботинки</a>
-            </li>
-            <li class="nav__item">
-                <a href="all-lots.html">Одежда</a>
-            </li>
-            <li class="nav__item">
-                <a href="all-lots.html">Инструменты</a>
-            </li>
-            <li class="nav__item">
-                <a href="all-lots.html">Разное</a>
-            </li>
+        <?php $cur_item++?>
+        <?php endwhile;?>
         </ul>
     </nav>
     <div class="main-footer__bottom container">
