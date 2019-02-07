@@ -1,10 +1,3 @@
-<?php
-$is_auth = (bool) rand(0, 1);
-$user_name = 'Brad';
-$user_avatar = 'img/user.jpg';
-$title_page = 'Главная';
-$main_content;
-?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>

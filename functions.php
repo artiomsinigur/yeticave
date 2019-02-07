@@ -15,3 +15,16 @@ function cutText($text, $num_lettres) {
   }
   return $text;
 };
+
+// Fonction permettand de assembler/réunir les layouts, sections, blocks, etc 
+function include_template($file_name, $data_array) {
+  $path = 'templates/' . $file_name;
+  if(file_exists($path)) {
+      ob_start();
+      extract($data_array);
+      require($path);
+      return ob_get_clean();
+  } else {
+    return '';
+  }
+};

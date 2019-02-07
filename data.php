@@ -9,6 +9,11 @@ $bets = [
 ];
 */
 
+$is_auth = (bool) rand(0, 1);
+$user_name = 'Brad';
+$user_avatar = 'img/user.jpg';
+$title_page = 'Главная';
+
 $categories = ['Доски и лыжи', 'Крепления', 'Ботинки', 'Одежда', 'Инструменты', 'Разное'];
 $lots = [
     [
