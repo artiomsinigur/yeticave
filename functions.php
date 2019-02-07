@@ -20,9 +20,11 @@ function cutText($text, $num_lettres) {
 function include_template($file_name, $data_array) {
   $path = 'templates/' . $file_name;
   if(file_exists($path)) {
+      // Démarrer la temporisation de sortie
       ob_start();
       extract($data_array);
       require($path);
+      // Lire le contenu courant du tampon de sortie puis l'efface
       return ob_get_clean();
   } else {
     return '';

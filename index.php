@@ -5,9 +5,9 @@ require_once('config.php');
 
 // Option pour désactiver ou activer le site en cas de mise à jour
 if ($config['enable']) {
-    // Inclure la page main.php et les données $lots
+    // Inclure la page main.php et le tableau($lots) avec les données pour ce template
     $page_content = include_template('main.php', ['lots' => $lots]);
-    // Inclure la page layout.php avec tous les données
+    // Inclure la page layout.php et le tableau avec les données pour ce template
     $layout_content = include_template('layout.php', [
         'main_content' => $page_content,
         'categories' => $categories,
