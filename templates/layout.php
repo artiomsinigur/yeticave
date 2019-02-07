@@ -23,7 +23,7 @@
         <nav class="user-menu">
             <?php if ($is_auth == 1): ?>
             <div class="user-menu__image">
-                <img src="<?=$user_avatar?>" width="40" height="40" alt="Utilisateur">
+                <img src="<?=specChars($user_avatar)?>" width="40" height="40" alt="Utilisateur">
             </div>
             <div class="user-menu__logged">
                 <p><?=$user_name?></p>

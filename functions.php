@@ -30,3 +30,10 @@ function include_template($file_name, $data_array) {
     return '';
   }
 };
+
+// Fonction qui convertie les caractères spéciaux en entité HTML
+// Ou la function strip_tags() permet de supprimer les balises de HTML d'une chaine
+function specChars($str) {
+  $text = htmlspecialchars($str);
+  return $text;
+};  
