@@ -1,5 +1,6 @@
 <?php 
 // Fonction qui formate un nombre en millier par une espace et ajouter le symbole Rublie à la fin  
+// Formater un nombre en millier par une espace et ajouter le symbole Rublie à la fin  
 function formatPrice($price) {
   $price = ceil($price);
   $price = number_format($price, 0, '',' ') . ' &#8381';
@@ -49,4 +50,4 @@ function endTime() {
   $minutes = floor(($secs_to_midnight % 3600) / 60);
   
   return "Осталось $hours час и $minutes минут";
-}; 
+};
