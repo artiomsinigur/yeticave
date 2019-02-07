@@ -22,10 +22,4 @@ if ($config['enable']) {
 }
 print($layout_content);
 
-
-// $layout_content = [
-//     $main_content = [
-//         $lots = [$lot, $lot, $lot]
-//     ]
-// ];
 ?>

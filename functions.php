@@ -36,4 +36,17 @@ function include_template($file_name, $data_array) {
 function specChars($str) {
   $text = htmlspecialchars($str);
   return $text;
-};  
+};
+
+// Fonction qui retourne le temps restant jusqu'à minuit
+function endTime() {
+  date_default_timezone_set('America/Montreal');
+  $ts = time();
+  $ts_tomorrow = strtotime('tomorrow');
+  $secs_to_midnight = $ts_tomorrow - $ts;
+  
+  $hours = floor($secs_to_midnight / 3600);
+  $minutes = floor(($secs_to_midnight % 3600) / 60);
+  
+  return "Осталось $hours час и $minutes минут";
+}; 
