@@ -28,7 +28,7 @@ function include_template($file_name, $data_array) {
       // Lire le contenu courant du tampon de sortie puis l'efface
       return ob_get_clean();
   } else {
-    return '';
+    return 'Pas de fichier';
   }
 };
 

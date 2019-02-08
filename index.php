@@ -1,7 +1,10 @@
 <?php
 require_once('functions.php');
-require_once('data.php');
 require_once('config.php');
+
+require_once('data.php');
+require_once('lots_data.php');
+require_once('lot_page.php');
 
 // Option pour désactiver ou activer le site en cas de mise à jour
 if ($config['enable']) {
@@ -14,9 +17,8 @@ if ($config['enable']) {
         'title_page' => $title_page,
         'is_auth' => $is_auth,
         'user_name' => $user_name,
-        'user_avatar' => $user_avatar
+        'user_avatar' => $user_avatar,
         ]);
-    // $layout_content = require_once($config['tpl_path'] . 'main.php');
 } else {
     $layout_content = require_once($config['tpl_path'] . 'off.php');
 }
