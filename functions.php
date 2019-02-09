@@ -49,5 +49,5 @@ function endTime() {
   $hours = floor($secs_to_midnight / 3600);
   $minutes = floor(($secs_to_midnight % 3600) / 60);
   
-  return "Осталось $hours час и $minutes минут";
+  return "$hours час и $minutes минут";
 };

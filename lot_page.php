@@ -5,8 +5,8 @@ require_once('functions.php');
 require_once('data.php');
 require_once('lots_data.php');
 
+// Obtenir l'id de la requête et vérifier s'il existe dans le tableau $lots 
 $lot_view = null;
-
 if (isset($_GET['lot_id'])) {
   $lot_id = $_GET['lot_id'];
 
