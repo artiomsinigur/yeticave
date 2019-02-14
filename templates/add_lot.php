@@ -15,7 +15,7 @@
       <?php $lot_name = $_POST['lot-name'] ?? ''?> 
       <div class="form__item <?=$error_class?>"> <!-- form__item--invalid -->
         <label for="lot-name">Наименование</label>
-        <input id="lot-name" type="text" name="lot-name" value="<?=$lot_name?>" placeholder="Введите наименование лота" >
+        <input id="lot-name" type="text" name="lot-name" value="<?=htmlspecialchars($lot_name)?>" placeholder="Введите наименование лота" >
         <span class="form__error">Введите наименование лота</span>
       </div>
       
@@ -30,7 +30,7 @@
               <?php if (isset($_POST['category'])): ?>
                 <?php echo ($key == $_POST['category'] ? 'selected' : '')?>
               <?php endif;?>>
-            <?=$value?></option>
+            <?=htmlspecialchars($value)?></option>
           <?php endforeach;?>
         </select>
         <span class="form__error">Выберите категорию</span>
@@ -41,7 +41,7 @@
     <?php $message = $_POST['message'] ?? ''?> 
     <div class="form__item form__item--wide <?=$error_class?>">
       <label for="message">Описание</label>
-      <textarea id="message" name="message" placeholder="Напишите описание лота"><?=$message?></textarea>
+      <textarea id="message" name="message" placeholder="Напишите описание лота"><?=htmlspecialchars($message)?></textarea>
       <span class="form__error">Напишите описание лота</span>
     </div>
     
@@ -72,7 +72,7 @@
     <?php $lot_rate = $_POST['lot-rate'] ?? ''?> 
       <div class="form__item form__item--small <?=$error_class?>">
         <label for="lot-rate">Начальная цена</label>
-        <input id="lot-rate" type="number" name="lot-rate" value="<?=$lot_rate?>" placeholder="0" >
+        <input id="lot-rate" type="number" name="lot-rate" value="<?=htmlspecialchars($lot_rate)?>" placeholder="0" >
         <span class="form__error">Введите начальную цену</span>
       </div>
 
@@ -80,7 +80,7 @@
       <?php $lot_step = $_POST['lot-step'] ?? ''?> 
       <div class="form__item form__item--small <?=$error_class?>">
         <label for="lot-step">Шаг ставки</label>
-        <input id="lot-step" type="number" name="lot-step" value="<?=$lot_step?>" placeholder="0" >
+        <input id="lot-step" type="number" name="lot-step" value="<?=htmlspecialchars($lot_step)?>" placeholder="0" >
         <span class="form__error">Введите шаг ставки</span>
       </div>
 
@@ -88,7 +88,7 @@
       <?php $lot_date = $_POST['lot-date'] ?? ''?> 
       <div class="form__item <?=$error_class?>">
         <label for="lot-date">Дата окончания торгов</label>
-        <input class="form__input-date" id="lot-date" type="date" name="lot-date" value="<?=$lot_date?>">
+        <input class="form__input-date" id="lot-date" type="date" name="lot-date" value="<?=htmlspecialchars($lot_date)?>">
         <span class="form__error">Введите дату завершения торгов</span>
       </div>
     </div>
