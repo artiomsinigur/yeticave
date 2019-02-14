@@ -4,7 +4,6 @@ require_once('config.php');
 
 require_once('data.php');
 require_once('lots_data.php');
-require_once('lot_page.php');
 
 // Option pour désactiver ou activer le site en cas de mise à jour
 if ($config['enable']) {
@@ -18,6 +17,7 @@ if ($config['enable']) {
         'is_auth' => $is_auth,
         'user_name' => $user_name,
         'user_avatar' => $user_avatar,
+        'header_categories' => []
         ]);
 } else {
     $layout_content = require_once($config['tpl_path'] . 'off.php');

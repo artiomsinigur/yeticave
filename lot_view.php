@@ -1,5 +1,4 @@
 <?php
-
 require_once('functions.php');
 
 require_once('data.php');
@@ -14,14 +13,17 @@ if (isset($_GET['lot_id'])) {
     if ($item['id'] == $lot_id) {
       $lot_view = $item;
 
-      $page_content = include_template('lot_view.php', ['lot_view' => $lot_view]);
+      $page_content = include_template('lot_view.php', [
+        'lot_view' => $lot_view
+        ]);
       $layout_content = include_template('layout.php', [
           'main_content' => $page_content,
           'categories' => $categories,
           'title_page' => $title_page,
           'is_auth' => $is_auth,
           'user_name' => $user_name,
-          'user_avatar' => $user_avatar
+          'user_avatar' => $user_avatar,
+          'header_categories' => $categories
           ]);
 
       print($layout_content);

@@ -38,23 +38,30 @@
     </div>
 </header>
 
+<?php if ($header_categories): ?>
+    <nav class="nav">
+        <ul class="nav__list container">
+            <?php foreach ($categories as $categorie): ?>
+            <li class="nav__item">
+                <a href="all-lots.html"><?=$categorie?></a>
+            </li>
+            <?php endforeach;?>
+        </ul>
+    </nav>
+<?php endif;?>
+
 <main class="container">
     <?=$main_content?>
 </main>
 
 <footer class="main-footer">
     <nav class="nav">
-        <?php 
-        $count_items = count($categories)-1;
-        $cur_item = 1;
-        ?>
         <ul class="nav__list container">
-        <?php while ($count_items >= $cur_item): ?>
+        <?php foreach ($categories as $category): ?>
             <li class="nav__item">
-                <a href="all-lots.html"><?=$categories[$cur_item]?></a>
+                <a href="all-lots.html"><?=$category?></a>
             </li>
-        <?php $cur_item++?>
-        <?php endwhile;?>
+        <?php endforeach;?>
         </ul>
     </nav>
     <div class="main-footer__bottom container">

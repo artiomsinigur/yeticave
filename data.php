@@ -14,4 +14,11 @@ $user_name = 'Brad';
 $user_avatar = 'img/user.jpg';
 $title_page = 'Главная';
 
-$categories = ['Доски и лыжи', 'Крепления', 'Ботинки', 'Одежда', 'Инструменты', 'Разное'];
+$categories = [
+    'boards-skis' => 'Доски и лыжи', 
+    'bracing' => 'Крепления', 
+    'boots' => 'Ботинки', 
+    'clothing' => 'Одежда', 
+    'instruments' => 'Инструменты', 
+    'miscellaneous' => 'Разное'
+];
