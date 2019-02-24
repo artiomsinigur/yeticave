@@ -21,19 +21,19 @@
         <a class="main-header__add-lot button" href="add_lot.php">Добавить лот</a>
 
         <nav class="user-menu">
-            <?php if ($is_auth == 1): ?>
-            <div class="user-menu__image">
-                <img src="<?=specChars($user_avatar)?>" width="40" height="40" alt="Utilisateur">
-            </div>
-            <div class="user-menu__logged">
-                <p><?=$user_name?></p>
-            </div>
+            <?php if (isset($_SESSION['user'])): ?>
+                <div class="user-menu__image">
+                    <img src="<?=specChars($_SESSION['user']['avatar'])?>" width="40" height="40" alt="Utilisateur">
+                </div>
+                <div class="user-menu__logged">
+                    <p><?=$_SESSION['user']['name']?></p>
+                </div>
             <?php else: ?>
-            <ul class="user-menu__list">
-                <li class="user-menu__item"><a href="http://">S'inscrire</a></li>
-                <li class="user-menu__item"><a href="http://">Se connecter</a></li>
-            </ul>
-            <?php endif;?>
+                <ul class="user-menu__list">
+                    <li class="user-menu__item"><a href="http://">S'inscrire</a></li>
+                    <li class="user-menu__item"><a href="login.php">Se connecter</a></li>
+                </ul>
+            <?php endif; ?>
         </nav>
     </div>
 </header>

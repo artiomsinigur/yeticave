@@ -51,3 +51,17 @@ function endTime() {
   
   return "$hours час и $minutes минут";
 };
+
+/*
+// Fonction qui cherche un utilisateur par email
+function searchUserByEmail($email, $users) {
+  $result = null;
+  foreach ($users as $user) {
+    if ($user['email'] == $email) {
+      $result = $user;
+      break;
+    }
+  }
+  return $result;
+}
+*/

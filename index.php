@@ -5,6 +5,10 @@ require_once('config.php');
 require_once('data.php');
 require_once('lots_data.php');
 
+session_start();
+var_dump($_SESSION);
+var_dump($_SERVER['REQUEST_METHOD']);
+
 // Option pour désactiver ou activer le site en cas de mise à jour
 if ($config['enable']) {
     // Inclure la page main.php et le tableau($lots) avec les données pour ce template
