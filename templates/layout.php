@@ -18,7 +18,7 @@
             <input type="search" name="search" placeholder="Поиск лота">
             <input class="main-header__search-btn" type="submit" name="find" value="Найти">
         </form>
-        <a class="main-header__add-lot button" href="add_lot.php">Добавить лот</a>
+            <a class="main-header__add-lot button" href="add_lot.php">Ajouter un lot</a>
 
         <nav class="user-menu">
             <?php if (isset($_SESSION['user'])): ?>
@@ -27,6 +27,7 @@
                 </div>
                 <div class="user-menu__logged">
                     <p><?=$_SESSION['user']['name']?></p>
+                    <a href="logout.php">Se deconnecter</a>
                 </div>
             <?php else: ?>
                 <ul class="user-menu__list">

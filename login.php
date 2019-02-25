@@ -3,7 +3,6 @@ require_once('functions.php');
 require_once('data.php');
 require_once('users_data.php');
 require_once('lots_data.php');
-
 session_start();
 
 /*
@@ -54,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $page_content = include_template('login.php', ['errors' => $errors]);
   } else {
     header("Location: /yeticave/index.php");
-    // exit();
+    exit; // La suite de code ne sera pas exécuté
   }
 } else {
   // Si la session est active, on affiche son nom

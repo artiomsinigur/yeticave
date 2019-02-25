@@ -4,9 +4,8 @@ require_once('config.php');
 
 require_once('data.php');
 require_once('lots_data.php');
-
 session_start();
-var_dump($_SESSION);
+
 var_dump($_SERVER['REQUEST_METHOD']);
 
 // Option pour désactiver ou activer le site en cas de mise à jour
