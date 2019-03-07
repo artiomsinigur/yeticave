@@ -1,6 +1,12 @@
 <?php
 require_once('functions.php');
 require_once('data.php');
+session_start();
+
+if (!isset($_SESSION['user'])) {
+  http_response_code(404);
+  exit;
+}
 
 $errors = [];
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
